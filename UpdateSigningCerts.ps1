@@ -34,7 +34,7 @@ if($metadata){
         #Get the current signing certs on the federated trust
         do{
             $error.clear()
-            $domain = Read-Host -Prompt "Enter federated domain name (ex. mail.mil)"
+            $domain = Read-Host -Prompt "Enter federated domain name (ex. contoso.com)"
             $federationsettings = Get-MsolDomainFederationSettings -DomainName $domain -erroraction silentlycontinue
             if($error){write-host $error[0] -foregroundcolor Red}
         }until($error[0].exception -notmatch "This domain does not exist. Check the name and try again.")
